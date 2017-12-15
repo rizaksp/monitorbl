@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    table {
+        width: 100%;
+        border: 1px solid #999;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Lapak</th>
+            <th>Nama Penjual</th>
+            <th>Terjual</th>
+            <th>Harga</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for li in links %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{{ li.url }}">{{ li.nama_lapak }}</a></td>
+            <td>{{ li.toko }}</td>
+            <td>{{ li.terjual }}</td>
+            <td>{{ li.harga }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">Tidak ada record.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

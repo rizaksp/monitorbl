@@ -1,0 +1,22 @@
+a_title = html.select('.product-title > a')
+    href_title  = a_title[0]['href']
+    text_title = a_title[0].text 
+
+text_price = html.select('.product-pricetag span')[-1].text
+
+text_penjual = html.select('#shop-name-info')[0].text
+
+
+===================================
+
+list_products = html.select('.product__name')
+
+forloop list_products -> p
+    p.attrs.get('href')
+    p.attrs.get('title')
+
+text_terjual = html.select('.qa-pd-sold-value')[0].text
+
+text_price = html.select('.c-product-detail-price')[0].attrs.get('data-reduced-price')
+
+text_penjual = html.select('.c-user-identification__name')[0].text
